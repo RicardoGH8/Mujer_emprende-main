@@ -42,34 +42,33 @@ $Conexion->close();
     
     <title>Perfil</title>
     <?php include('../../Include/Login_header.html'); ?>
+    
+        
     <style>
-
-
         body {
-            display: flex;
             font-family: 'Holtwood One SC', sans-serif;
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
         }
 
-        .profile-container {
-            flex: 1;
+        .profile-card {
             padding: 20px;
-        }
-
-        .menu-container {
-            width: 200px;
-            background-color: #f0f0f0;
-            padding: 20px;
-        }
-
-        .menu-item {
-            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
         }
 
         /* Estilos adicionales */
         h1 {
             font-size: 2em;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         p {
@@ -77,34 +76,11 @@ $Conexion->close();
             margin-bottom: 10px;
         }
 
-        button {
-            padding: 10px 20px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #4caf50;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-    
-        body {
-            display: flex;
-            font-family: 'Holtwood One SC', sans-serif;
-            margin: 0;
-        }
-
-        .profile-container {
-            flex: 1;
-            padding: 20px;
-        }
-
         .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
             width: 200px;
             background-color: #f0f0f0;
             padding: 20px;
@@ -114,7 +90,18 @@ $Conexion->close();
             margin-bottom: 10px;
         }
 
-        
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -125,16 +112,13 @@ $Conexion->close();
         <p>Usuario: <?php echo $nombre_usuario; ?></p>
         <p>Correo: <?php echo $correo; ?></p>
 
-        <!-- Botones para cambiar la contraseña, usuario o correo -->
-        <button onclick="cambiarContraseña()">Cambiar Contraseña</button>
-        <button onclick="cambiarUsuario()">Cambiar Usuario</button>
-        <button onclick="cambiarCorreo()">Cambiar Correo</button>
+ 
     </div>
 
     <div class="menu-container">
         <!-- Menú de opciones -->
         <div class="menu-item">Configuración</div>
-        <div class="menu-item">Historial de Pedidos</div>
+        <div class="menu-item">Mi actividad</div>
         <form action="../../cerrar_sesion.php" method="post">
       <button type="submit" name="cerrar_sesion">Cerrar Sesión</button>
     </div>

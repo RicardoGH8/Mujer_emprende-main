@@ -56,14 +56,7 @@
     </section>
 
     <!-- Tarjeta para Regístrate con Google -->
-    <section class="container mt-5">
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">Regístrate con Google</h5>
-                <!-- Puedes agregar contenido para el registro con Google si es necesario -->
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Footer -->
     <?php include('../../Include/Footer.html'); ?>

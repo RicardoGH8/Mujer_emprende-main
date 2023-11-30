@@ -38,21 +38,162 @@ echo "ID del Producto: " . $id_producto;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/Styles.css">
     <title>Detalles del Producto</title>
+    
 </head>
 
 <?php include('../../Include/Login_header.html'); ?>
+<style>
+        /* Estilos para la sección de detalles de la historia */
+        .historia-details {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
 
+        .historia-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .historia-card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .historia-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .historia-card p {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para la sección de comentarios */
+        .comments-section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .comments-section h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .comment-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .comment-card strong {
+            font-weight: bold;
+        }
+
+        .comment-card .comment-card-content {
+            margin-bottom: 5px;
+        }
+
+        .comment-card .comment-options {
+            text-align: right;
+        }
+
+        .comment-card .edit-button,
+        .comment-card .delete-button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .comment-box {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .comment-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .comment-box textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            resize: vertical;
+        }
+
+        .comment-box button {
+            padding: 8px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+            background-color: #E68989;
+            color: white;
+        }
+        .product-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.product-info {
+    margin-top: 20px;
+}
+
+.product-info h3,
+.product-info p,
+.product-info .price {
+    margin: 5px 0;
+}
+
+.buy-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+}
+
+
+    </style>
 <body>
 
-    <section class="product-details">
-        <div class="product-card">
-            <img class="product-image" src="data:image/<?php echo pathinfo($foto, PATHINFO_EXTENSION); ?>;base64, <?php echo $foto; ?>" alt="Producto">
+<section class="product-details">
+    <div class="product-card">
+        <img class="product-image" src="data:image/<?php echo pathinfo($foto, PATHINFO_EXTENSION); ?>;base64, <?php echo $foto; ?>" alt="Producto">
+        <div class="product-info">
             <h3><?php echo $titulo; ?></h3>
             <p><?php echo $contenido; ?></p>
-            <p>Precio: <?php echo $precio; ?></p>
+            <p class="price">Precio: <?php echo $precio; ?></p>
             <button class="buy-button" onclick="comprarProducto()">Comprar</button>
         </div>
-    </section>
+    </div>
+</section>
+
     <!-- Visualizar comentarios -->
     <section class="comments-section">
         <h2>Comentarios (<?php echo obtenerContadorComentarios($Conexion, $id_producto); ?>)</h2>

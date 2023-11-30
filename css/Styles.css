@@ -1,0 +1,241 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Estilos de la barra de navegación */
+nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Estilos de la barra de navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Alinear los elementos del menú a la izquierda */
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0 20px;
+}
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    /* Resto de los estilos responsivos ... */
+    .banner {
+        width: auto;
+        left: 10%;
+        right: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Resto de los estilos responsivos ... */
+    .banner {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+}
+
+/* Estilos de la sección 'inicio' */
+
+/* 
+
+*/
+footer {
+    background-color: #999BCC; /* Color de fondo del footer */
+    color: white;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1.9cm;
+}
+
+.footer-top h1 {
+    font-size: 2rem; /* Tamaño del título 'Contactanos' */
+    margin-bottom: 1.9cm; /* Espacio después del título */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
+    flex-wrap: wrap;
+    padding: 0 5%; /* Padding horizontal para no pegarse a los bordes */
+}
+
+.footer-section {
+    margin: 0 10px; /* Espacio horizontal para las secciones */
+    flex: 1; /* Distribución equitativa del espacio */
+    min-width: 140px; /* Mínimo ancho para las secciones */
+}
+
+.footer-divider {
+    height: 50px; /* Altura de la línea divisoria */
+    width: 2px;
+    background-color: white; /* Color de la línea */
+    margin: 0 20px; /* Espacio alrededor de las líneas */
+    align-self: center; /* Alinea las líneas al centro verticalmente */
+}
+
+.footer-bottom {
+    margin-top: 5cm; /* Espacio antes del copyright */
+    padding: 20px 0;
+}
+
+.conditions-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.conditions-link:hover {
+    color: #aaa; /* Cambio de color al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-divider {
+        display: none; /* Oculta las líneas divisorias en pantallas pequeñas */
+    }
+
+    .footer-section {
+        margin-bottom: 20px; /* Espacio debajo de cada sección para pantallas pequeñas */
+    }
+
+    .footer-bottom {
+        margin-top: 2cm; /* Espacio reducido para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-top h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer-bottom {
+        margin-top: 1cm; /* Espacio más reducido para pantallas muy pequeñas */
+    }
+}
+
+
+
+/* Estilos para la sección de detalles de la historia */
+.historia-details {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.historia-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.historia-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.historia-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.historia-card p {
+    margin-bottom: 15px;
+}
+
+/* Estilos para la sección de comentarios */
+.comments-section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.comments-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.comment-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.comment-card strong {
+    font-weight: bold;
+}
+
+.comment-card .comment-card-content {
+    margin-bottom: 5px;
+}
+
+.comment-card .comment-options {
+    text-align: right;
+}
+
+.comment-card .edit-button,
+.comment-card .delete-button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+
+.comment-box {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.comment-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.comment-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: vertical;
+}
+
+.comment-box button {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background-color: #E68989;
+    color: white;
+}

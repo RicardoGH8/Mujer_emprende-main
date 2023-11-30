@@ -1,0 +1,1 @@
+<!-- Usando un DELETE FROM Y WHERE -->

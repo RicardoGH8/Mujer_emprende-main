@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/Styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos para el header */
+    header {
+     background-color: #fff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      color: black;
+      font-weight: bold;
+      margin: 0 10px;
+      position: relative;
+    }
+
+    nav ul a:first-child {
+      font-family: 'Holtwood One SC', serif;
+      color: black;
+      margin-right: auto;
+    }
+
+    nav ul a img {
+      display: block;
+      max-width: 30px;
+      height: auto;
+    }
+
+    /* Estilos para hacer responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul a {
+        margin: 10px 0;
+      }
+
+      nav ul a:first-child {
+        margin-right: 0;
+      }
+
+      nav ul a:nth-last-child(2) {
+        margin-left: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <a style="color: black;">Mujer Emprende</a>
+      <a href="../../index.html"><img src="../../Assets/Icons/Icono_home.png" alt="Inicio"></a>
+      <a href="./Mercado.php">Mercado</a>
+      <a href="./Historias_exito.php">Historias de éxito</a>
+      <a href="./Cuenta.php">Cuenta</a>
+      <a href="./Carrito.php"><img src="../../Assets/Icons/Icono_carrito.png" alt="Carrito"></a>
+    </ul>
+  </nav>
+</header>
+
+</body>
+</html>

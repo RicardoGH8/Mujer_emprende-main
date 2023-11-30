@@ -15,7 +15,7 @@ $Conexion = mysqli_connect($Hostname, $Username, $Password, $Database);
 if (mysqli_connect_error()) {
     echo 'Conexión fallida. Por favor, asegúrese de tener los permisos o la conexión debida. Error: ' . mysqli_connect_error();
 } else {
-    echo 'Conexión exitosa';
+    
 }
 
 ?>

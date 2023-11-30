@@ -43,6 +43,8 @@ $Conexion->close();
     <title>Perfil</title>
     <?php include('../../Include/Login_header.html'); ?>
     <style>
+
+
         body {
             display: flex;
             font-family: 'Holtwood One SC', sans-serif;
@@ -63,6 +65,56 @@ $Conexion->close();
         .menu-item {
             margin-bottom: 10px;
         }
+
+        /* Estilos adicionales */
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    
+        body {
+            display: flex;
+            font-family: 'Holtwood One SC', sans-serif;
+            margin: 0;
+        }
+
+        .profile-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .menu-container {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .menu-item {
+            margin-bottom: 10px;
+        }
+
+        
     </style>
 </head>
 <body>

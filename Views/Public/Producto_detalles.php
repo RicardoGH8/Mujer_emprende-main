@@ -21,6 +21,22 @@ if (isset($_GET['id'])) {
         // Manejar el caso en que no se encuentre el producto
         echo "Producto no encontrado";
     }
+
+    // Lógica para manejar la eliminación cuando se envía el formulario
+if (isset($_POST['eliminarComentario'])) {
+    $id_comentario_eliminar = $_POST['id_comentario_eliminar'];
+
+    $eliminarComentarioQuery = "DELETE FROM Comentarios WHERE Codigo_comentario = '$id_comentario_eliminar'";
+    $resultadoEliminarComentario = $Conexion->query($eliminarComentarioQuery);
+
+    if ($resultadoEliminarComentario) {
+        echo "Comentario eliminado correctamente.";
+    } else {
+        echo "Error al intentar eliminar el comentario: " . $Conexion->error;
+    }
+}
+
+
 } else {
     // Manejar el caso en que no se proporcionó un ID de producto
     echo "<br>Error MySQL: " . $Conexion->error;
@@ -38,6 +54,21 @@ echo "ID del Producto: " . $id_producto;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/Styles.css">
     <title>Detalles del Producto</title>
+    <style>
+    /* Estilo para el botón de eliminar */
+    .delete-button {
+        background-color: #FF6347; /* Color de fondo */
+        color: #fff; /* Color del texto */
+        padding: 8px 15px; /* Espaciado interno del botón */
+        border: none; /* Sin borde */
+        border-radius: 3px; /* Bordes redondeados */
+        cursor: pointer; /* Cursor de apuntar */
+    }
+
+    .delete-button:hover {
+        background-color: #FF4737; /* Cambiar el color de fondo al pasar el mouse */
+    }
+</style>
 </head>
 
 <?php include('../../Include/Login_header.html'); ?>
@@ -79,9 +110,12 @@ echo "ID del Producto: " . $id_producto;
                     
                     // Verificar si el usuario actual es el autor del comentario
                     if (isset($_SESSION['id']) && $_SESSION['id'] == $rowComentario['Usuario_id']) {
-                        echo '<button class="edit-button" onclick="editarComentario(' . $rowComentario['Codigo_comentario'] . ')">Editar</button>';
-                        echo '<button class="delete-button" onclick="eliminarComentario(' . $rowComentario['Codigo_comentario'] . ')">Eliminar</button>';
+                        echo '<form method="POST" action="">
+                                <input type="hidden" name="id_comentario_eliminar" value="' . $rowComentario['Codigo_comentario'] . '">
+                                <button type="submit" class="delete-button" name="eliminarComentario">Eliminar</button>
+                            </form>';
                     }
+
 
                     echo '</div>';
                     echo '</li>';

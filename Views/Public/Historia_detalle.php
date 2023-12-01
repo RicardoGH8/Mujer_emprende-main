@@ -21,6 +21,19 @@ if (isset($_GET['id'])) {
         // Manejar el caso en que no se encuentre la historia
         echo "Historia no encontrada";
     }
+
+    if (isset($_POST['eliminarComentario'])) {
+        $id_comentario_a_eliminar = $_POST['id_comentario'];
+
+        $eliminarComentarioQuery = "DELETE FROM Comentarios_historias WHERE Codigo_comentario_historias = '$id_comentario_a_eliminar'";
+        $resultadoEliminarComentario = $Conexion->query($eliminarComentarioQuery);
+
+        if ($resultadoEliminarComentario) {
+            echo "Comentario eliminado correctamente.";
+        } else {
+            echo "Error al intentar eliminar el comentario: " . $Conexion->error;
+        }
+    }
 } else {
     // Manejar el caso en que no se proporcionó un ID de historia
     echo "<br>Error MySQL: " . $Conexion->error;
@@ -142,6 +155,20 @@ echo "ID de la Historia: " . $id_historia;
             background-color: #E68989;
             color: white;
         }
+
+        .delete-button {
+        background-color: #FF6347; /* Color de fondo */
+        color: #fff; /* Color del texto */
+        padding: 8px 15px; /* Espaciado interno del botón */
+        border: none; /* Sin borde */
+        border-radius: 3px; /* Bordes redondeados */
+        cursor: pointer; /* Cursor de apuntar */
+        }
+
+        .delete-button:hover {
+            background-color: #FF4737; /* Cambiar el color de fondo al pasar el mouse */
+        }
+
     </style>
 </head>
 
@@ -184,8 +211,10 @@ echo "ID de la Historia: " . $id_historia;
                     
                     // Verificar si el usuario actual es el autor del comentario
                     if (isset($_SESSION['id']) && $_SESSION['id'] == $rowComentario['Usuario_id']) {
-                        echo '<button class="edit-button" onclick="editarComentario(' . $rowComentario['Codigo_comentario_historias'] . ')">Editar</button>';
-                        echo '<button class="delete-button" onclick="eliminarComentario(' . $rowComentario['Codigo_comentario_historias'] . ')">Eliminar</button>';
+                        echo '<form method="POST" action="">
+                        <input type="hidden" name="id_comentario" value="' . $rowComentario['Codigo_comentario_historias'] . '">
+                        <button type="submit" class="delete-button" name="eliminarComentario">Eliminar</button>
+                        </form>';
                     }
 
                     echo '</div>';

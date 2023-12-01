@@ -55,29 +55,30 @@
         <form action="../../Logic/Registro_y_login/Registro_cuenta.php" method="POST">
             <h1>Registro usuari@s</h1>
             
-            <!-- Ingresar el nombre(s) -->
-            <div class="form-group">
-                <label>Ingresar su nombre(s)</label>
-                <input type="text" class="form-control" placeholder="Nombre" required autocomplete="off" name="Nombre"/>
-            </div>
-            
-            <!-- Ingresar el correo -->
-            <div class="form-group">
-                <label>Ingresar su correo</label>
-                <input type="email" class="form-control" placeholder="Correo" required autocomplete="off" name="Correo"/>
-            </div>
+           <!-- Ingresar el nombre(s) -->
+<div class="form-group">
+    <label>Ingresar su nombre(s)</label>
+    <input type="text" class="form-control" placeholder="Nombre" required autocomplete="off" name="Nombre" pattern=".*\S+.*">
+</div>
 
-            <!-- Ingresar la contraseña -->
-            <div class="form-group">
-                <label>Ingresar su contraseña</label>
-                <input type="password" class="form-control" placeholder="Contraseña" required autocomplete="off" name="Contraseña"/>
-            </div>
+<!-- Ingresar el correo -->
+<div class="form-group">
+    <label>Ingresar su correo</label>
+    <input type="email" class="form-control" placeholder="Correo" required autocomplete="off" name="Correo" pattern=".*\S+.*">
+</div>
 
-            <!-- Ingresar el nombre de usuario -->
-            <div class="form-group">
-                <label>Ingresar su nombre de usuario</label>
-                <input type="text" class="form-control" placeholder="Usuario" required autocomplete="off" name="Usuario"/>
-            </div>
+<!-- Ingresar la contraseña -->
+<div class="form-group">
+    <label>Ingresar su contraseña</label>
+    <input type="password" class="form-control" placeholder="Contraseña" required autocomplete="off" name="Contraseña" pattern=".*\S+.*">
+</div>
+
+<!-- Ingresar el nombre de usuario -->
+<div class="form-group">
+    <label>Ingresar su nombre de usuario</label>
+    <input type="text" class="form-control" placeholder="Usuario" required autocomplete="off" name="Usuario" pattern=".*\S+.*">
+</div>
+
 
             <!-- Botón de registro -->
             <button type="submit" class="btn button-block" value="Insertarcuenta" name="enviar">Registrarme</button>

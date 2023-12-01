@@ -115,3 +115,176 @@
     }
 }
 
+/* Estilos de la sección 'inicio' */
+
+.banner-container {
+    height: 75vh; /* Ajusta la altura del contenedor del banner al 65% de la altura de la ventana */
+    overflow: hidden; /* Esconde cualquier contenido que se desborde del contenedor */
+    position: relative; /* Agrega esta línea */
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%; /* Asegura que la imagen cubra todo el contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+    display: block; /* Esto asegurará que la imagen se muestre correctamente */
+}
+
+.banner-text {
+    position: absolute;
+    right: 2%; /* Espacio desde el lado derecho */
+    bottom: 20%; /* Espacio desde la parte inferior */
+    color: white;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.129); /* Fondo semi-transparente para el texto */
+    padding: 20px;
+    border-radius: 10px; /* Esquinas redondeadas */
+    max-width: 550px; /* Ancho máximo del texto del banner */
+    border: 7px solid white; /* Agrega un borde blanco alrededor del banner */
+}
+
+.banner-text h2 {
+    margin-bottom: 0.1rem;
+    font-size: 1.5rem; /* Aumenta el tamaño del título */
+}
+
+.banner-text p {
+    margin-bottom: 1%;
+    font-size: 2.5rem; /* Aumenta el tamaño del párrafo */
+    width: 100%;
+    font-weight: bold;
+}
+
+.price {
+    text-align: left;
+    font-size: 2.5rem; /* Aumenta el tamaño del precio */
+    font-weight: bold;
+}
+
+/* Botón de Compra */
+.boton-comprar2{
+    display:inline;
+    background-color: #E68989;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+.precio{
+    color: yellow;
+}
+.productos{
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Estilos para la sección de historias */
+/* Estilos para la sección de historias */
+.historias h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff22;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+    display: block;
+}
+
+.card-body {
+    padding: 0px;
+    text-align: center;
+}
+
+
+.boton-ver-mas {
+    display: inline-block;
+    margin-top: 0px;
+    text-decoration: none;
+    background-color: #000000a1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .card-container {
+        justify-content: center;
+    }
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+    }
+}
+.historias-unicas h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-container-unicas {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card-historia-1, .card-historia-2, .card-historia-3 {
+  position: relative;
+  width: 300px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-historia-1 img, .card-historia-2 img, .card-historia-3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body-unico {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.boton-ver-mas-unico {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
